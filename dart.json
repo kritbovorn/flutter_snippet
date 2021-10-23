@@ -44,11 +44,17 @@
 	"TODO: comment": {
 		"prefix": "tod",
 		"body": [
-		  "// ignore: todo",
-		  "// TODO: - $1"
+		  "// TODO: - "
 		],
 		"description": "TODO: comment"
 	  },
+	"Custom: Mark FIXME:": {
+	"prefix": "fixme",
+	"body": [
+		"// FIXME: - "
+	],
+	"description": "Custom: Mark FIXME:"
+	},
 	"Text Widget": {
 		"prefix": "wtext",
 		"body": [
@@ -60,20 +66,43 @@
 		],
 		"description": "Text Widget"
 	},
-	"StatelessWidget": {
-	"prefix": "statelesswidget",
-	"body": [
-		"import 'package:flutter/material.dart';",
-		"",
-		"class ${1:${TM_FILENAME_BASE}} extends StatelessWidget {",
-		"  const ${1:${TM_FILENAME_BASE}}({Key? key}) : super(key: key);",
-		"",
-		"  @override",
-		"  Widget build(BuildContext context) {",
-		"    return $2;",
-		"  }",
-		"}"
-	],
-	"description": "Custom StatelessWidget"
+	"Custom StatelessWidget": {
+		"prefix": "statelw",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"",
+			"class ${1:${TM_FILENAME_BASE}} extends StatelessWidget {",
+			"  const ${1:${TM_FILENAME_BASE}}({Key? key}) : super(key: key);",
+			"",
+			"  @override",
+			"  Widget build(BuildContext context) {",
+			"    return $2;",
+			"  }",
+			"}"
+		],
+		"description": "Custom StatelessWidget"
 	},
+	"Custom StatefullWidget": {
+		"prefix": "statefw",
+		"body": [
+		  "import 'package:flutter/material.dart';",
+		  "",
+		  "class ${1:${TM_FILENAME_BASE}} extends StatefulWidget {",
+		  "  const ${1:${TM_FILENAME_BASE}}({Key? key}) : super(key: key);",
+		  "",
+		  "  @override",
+		  "  _${1:${TM_FILENAME_BASE}}State createState() => _${1:${TM_FILENAME_BASE}}State();",
+		  "}",
+		  "",
+		  "class _${1:${TM_FILENAME_BASE}}State extends State<${1:${TM_FILENAME_BASE}}> {",
+		  "  @override",
+		  "  Widget build(BuildContext context) {",
+		  "    return $2;",
+		  "  }",
+		  "}",
+		  ""
+		],
+		"description": "Custom StatefullWidget"
+	  },
+	  
 }
