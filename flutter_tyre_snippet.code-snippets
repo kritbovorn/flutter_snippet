@@ -105,6 +105,7 @@
 			"      title: '${1:Flutter Project}',",
 			"      theme: ThemeData(",
 			"        primarySwatch: Colors.blue,",
+			"        visualDensity: VisualDensity.adaptivePlatformDensity,",
 			"      ),",
 			"      home: const $2($0),",
 			"    );",
