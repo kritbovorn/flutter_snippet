@@ -113,5 +113,106 @@
 			"}"
 		],
 		"description": "สร้าง Main()"
-	}
+	},
+	"TextStyle() Snippets": {
+		"prefix": "btextstyle",
+		"body": [
+			"Text(",
+			"  $1,",
+			"  style: TextStyle(",
+			"  color: $2,",
+			"  fontSize: $3,",
+			"  fontWeight: FontWeight.$0,",
+			"  ),",
+			"),"
+		],
+		"description": "TextStyle() Snippets"
+	},
+	"Style Text Snippets": {
+		"prefix": "btstyle",
+		"body": [
+			"style: TextStyle(",
+			"  color: $1,",
+			"  fontSize: $2,",
+			"  fontWeight: FontWeight.$0,",
+			"),"
+		],
+		"description": "Style Text Snippets"
+	},
+	"Service for connect DataBase API": {
+		"prefix": "bapiservice Basic",
+		"body": [
+			"import 'package:http/http.dart' as http;  // *   Import   http   package",
+			"",
+			"class ApiService {",
+			"  Future<List<${1: Object}>?> ${2: method_name}() async {",
+			"    var client = http.Client();",
+			"    var url = '$0';",
+			"    var uri = Uri.parse(url);",
+			"",
+			"    var response = await client.get(uri);",
+			"    if (response.statusCode == 200) {",
+			"      var json = response.body;",
+			"      return postFromJson(json);  // * Use     app.quicktype.io   to convert json to Dart",
+			"    }",
+			"    return null;",
+			"  }",
+			"}"
+		],
+		"description": "Service for connect DataBase API"
+	},
+	"Theme of Context TextTheme": {
+		"prefix": "bthemecontext",
+		"body": [
+			"Theme.of(context)$0"
+		],
+		"description": "Theme of Context"
+	},
+	"All Screen height of device": {
+		"prefix": "bscreenheight",
+		"body": [
+			" double screenHeight = MediaQuery.of(context).size.height -",
+			"        MediaQuery.of(context).padding.top -",
+			"        kToolbarHeight - kBottomNavigationBarHeight;"
+		],
+		"description": "Screen height of device"
+	},
+	"Media Screen Size": {
+		"prefix": "bscreensize",
+		"body": [
+			" Size screenSize = MediaQuery.of(context).size;$0"
+		],
+		"description": "Media Screen Size"
+	},
+	"Text()": {
+		"prefix": "btext",
+		"body": [
+			"Text($1)$0"
+		],
+		"description": "Text()"
+	},
+	"Text: Theme.of(context).textTheme.": {
+		"prefix": "btexttheme",
+		"body": [
+			" Text(",
+			"   $1,",
+			"   style: Theme.of(context)$2,",
+			" )$0"
+		],
+		"description": "Text: Theme.of(context).textTheme."
+	},
+	"Debug Print()": {
+		"prefix": "bdebugprint",
+		"body": [
+		  " debugPrint($1);$0"
+		],
+		"description": "Debug Print()"
+	  },
+	  "Decare varaible in String": {
+		"prefix": "${}",
+		"body": [
+		  " '${$1}',$0"
+		],
+		"description": "Decare varaible in String"
+	  }
 }
