@@ -59,7 +59,7 @@
 			"",
 			"  @override",
 			"  Widget build(BuildContext context){",
-			"    return $1($0);",
+			"    return $1($2)$0;",
 			"  }",
 			"}"
 		],
@@ -80,7 +80,7 @@
 			"class _${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}State extends State<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}> {",
 			"  @override",
 			"  Widget build(BuildContext context) {",
-			"    return $1($0);",
+			"    return $1($2)$0;",
 			"  }",
 			"}"
 		],
@@ -197,22 +197,87 @@
 			" Text(",
 			"   $1,",
 			"   style: Theme.of(context)$2,",
-			" )$0"
+			" ),$0"
 		],
 		"description": "Text: Theme.of(context).textTheme."
 	},
 	"Debug Print()": {
 		"prefix": "bdebugprint",
 		"body": [
-		  " debugPrint($1);$0"
+			" debugPrint($1);$0"
 		],
 		"description": "Debug Print()"
-	  },
-	  "Decare varaible in String": {
+	},
+	"Decare varaible in String": {
 		"prefix": "${}",
 		"body": [
-		  " '${$1}',$0"
+			" '${$1}',$0"
 		],
 		"description": "Decare varaible in String"
-	  }
+	},
+	"FutureBuilder()": {
+		"prefix": "bfuturebuilder",
+		"body": [
+			"FutureBuilder<$1?>(",
+			"  future: $2,",
+			"  builder: (context, snapshot) {",
+			"    return $3;",
+			"  },",
+			"),$0"
+		],
+		"description": "FutureBuilder()"
+	},
+	"SetState() method": {
+		"prefix": "bsetstate",
+		"body": [
+			"setState(() => $1);$0"
+		],
+		"description": "SetState() method"
+	},
+	"Arrow Function": {
+		"prefix": "ba",
+		"body": [
+			"($1) => $2,$0"
+		],
+		"description": "Arrow Function"
+	},
+	"Custom Scaffold()": {
+		"prefix": "bscaffold",
+		"body": [
+			"Scaffold(",
+			"  appBar: AppBar($1),",
+			"  body: $0,",
+			")"
+		],
+		"description": "Custom Scaffold()"
+	},
+	"Navigator() push": {
+		"prefix": "bnavigatorpush",
+		"body": [
+			"Navigator.push(context, MaterialPageRoute(builder: (context) => $1,),);$0",
+			""
+		],
+		"description": "Navigator() push"
+	},
+	"Navigator() pop": {
+		"prefix": "bnavigatorpop",
+		"body": [
+			"Navigator.pop(context)$0"
+		],
+		"description": "Navigator() pop"
+	},
+	"SizedBox.shrink()": {
+		"prefix": "bsizeboxshrink",
+		"body": [
+			" SizedBox.shrink()$0"
+		],
+		"description": "SizedBox.shrink()"
+	},
+	"README.md Image Logo": {
+		"prefix": "breadmeimagelogo",
+		"body": [
+			"<img src=\"https://user-images.githubusercontent.com/10919051/178402698-b81b894c-6836-4da1-b465-6377594629e2.png\" width=\"40\" height=\"40\">"
+		],
+		"description": "README.md Image Logo"
+	}
 }
