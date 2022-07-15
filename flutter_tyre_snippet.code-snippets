@@ -279,5 +279,32 @@
 			"<img src=\"https://user-images.githubusercontent.com/10919051/178402698-b81b894c-6836-4da1-b465-6377594629e2.png\" width=\"40\" height=\"40\">"
 		],
 		"description": "README.md Image Logo"
-	}
+	},
+	"SizedBox(height:_)": {
+		"prefix": "bsizeboxheight",
+		"body": [
+		  "const SizedBox(",
+		  "  height: $1,",
+		  "),$0"
+		],
+		"description": "SizedBox(height:_)"
+	  },
+	  "SizedBox(width:_)": {
+		"prefix": "bsizeboxwidth",
+		"body": [
+		  "const SizedBox(",
+		  "  width: $1,",
+		  "),$0"
+		],
+		"description": "SizedBox(width:_)"
+	  },
+	  "Expanded SizedBox.shrink()": {
+		"prefix": "bexpandsizedboxshrink",
+		"body": [
+		  "Expanded(",
+		  "  child: SizedBox.shrink(),",
+		  "),"
+		],
+		"description": "Expanded SizedBox.shrink()"
+	  },
 }
