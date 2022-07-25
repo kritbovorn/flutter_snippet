@@ -307,4 +307,25 @@
 		],
 		"description": "Expanded SizedBox.shrink()"
 	  },
+	  "Color Method for selected Index": {
+		"prefix": "bmcolorselected",
+		"body": [
+		  "int selectedIndex = 0;",
+		  "",
+		  "  Color backgroundSelected(int index) {",
+		  "    Color backgroundSelect = selectedIndex == index",
+		  "        ? Theme.of(context).colorScheme.error",
+		  "        : Theme.of(context).colorScheme.onError;",
+		  "    return backgroundSelect;",
+		  "  }",
+		  "",
+		  "  Color colorSelected(int index) {",
+		  "    Color colorSelect = selectedIndex == index",
+		  "        ? Theme.of(context).colorScheme.onError",
+		  "        : Theme.of(context).colorScheme.secondary;",
+		  "    return colorSelect;",
+		  "  }"
+		],
+		"description": "Color Method for selected Index"
+	  }
 }
