@@ -327,5 +327,16 @@
 		  "  }"
 		],
 		"description": "Color Method for selected Index"
-	  }
+	  },
+	  "Expanded Container()": {
+		"prefix": "bexpandcontainer",
+		"body": [
+		  "Expanded(",
+		  "    child: Container(",
+		  "    color: Colors.green,",
+		  "  ),",
+		  "),"
+		],
+		"description": "Expanded Container()"
+	  },
 }
