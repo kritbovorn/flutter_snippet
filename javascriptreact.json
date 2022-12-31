@@ -1,5 +1,5 @@
 {
-	// Place your snippets for javascriptreact here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
 	// same ids are connected.
@@ -11,6 +11,153 @@
 	// 		"$2"
 	// 	],
 	// 	"description": "Log output to console"
-	// },
+	// }
+	"--- React Native component Text()": {
+		"prefix": "rntext",
+		"body": [
+		  " <Text style= {$1}>${2}</Text>${0}"
+		],
+		"description": "component Text()"
+	  },
+	  "--- React Native component View()": {
+		"prefix": "rnview",
+		"body": [
+		  " <View style={$1}>$3</View>${0}"
+		],
+		"description": "--- React Native component Text()"
+	  },
+	  "--- React Native component TextField()": {
+		"prefix": "rntextfield",
+		"body": [
+		  "<TextInput style={{$1} defaultValue=\"${2}\" />${0}"
+		],
+		"description": "--- React Native component TextField()"
+	  },
+	  "--- React Native component ScrollView()": {
+		"prefix": "rnscrollview",
+		"body": [
+		  "<ScrollView style={$1}>${2}</ScrollView>${0}"
+		],
+		"description": "--- React Native component ScrollView()"
+	  },
+	  "--- React Native component Image()": {
+		"prefix": "rnimage",
+		"body": [
+		  "<Image style={$1} source={{",
+		  "            uri: '$2'",
+		  "           }} />${0}"
+		],
+		"description": "--- React Native component Image()"
+	  },
+	  "--- React Native Function()": {
+		"prefix": "rnfunction",
+		"body": [
+		  "import React from \"react\";",
+		  "import { Text ,View} from 'react-native';",
+		  "",
+		  "const   ${1:originalName} = () => {",
+		  "  return (  ",
+		  "     <View style={${2}}> ",
+		  "      ${0}",
+		  "    </View>",
+		  "  );",
+		  "}",
+		  "",
+		  "export default ${1:originalName};",
+		  "",
+		  "",
+		  "",
+		  ""
+		],
+		"description": "--- React Native Function()"
+	  },
+	  "--- React Native Class()": {
+		"prefix": "rnclass",
+		"body": [
+		  "import React, { Component } from 'react';",
+		  "import { Text, View } from 'react-native';",
+		  "",
+		  "class  ${1:originalName} extends Component {",
+		  "  render() {",
+		  "    return (",
+		  "      <Text>Hello, I am your cat!</Text>",
+		  "    );",
+		  "  }",
+		  "}",
+		  "",
+		  "export default  ${1:originalName};"
+		],
+		"description": "--- React Native Class()"
+	  },
+	  "--- React Native SafeAreaView()": {
+		"prefix": "rnsafearea",
+		"body": [
+		  " <SafeAreaView style={$1}>$0</SafeAreaView>"
+		],
+		"description": "--- React Native SafeAreaView()"
+	  },
+	  "--- React Native Cury bracket": {
+		"prefix": "rncurybracket",
+		"body": [
+		  "{ ${1} }${0}"
+		],
+		"description": "--- React Native Cury bracket"
+	  },
+	  "--- React Native SafeArea And SubView()": {
+		"prefix": "rnsafeareasubview",
+		"body": [
+		  "<SafeAreaView>",
+		  "  <View style={{${1}}}>",
+		  "      $0",
+		  "  </View>",
+		  "</SafeAreaView>",
+		  " "
+		],
+		"description": "--- React Native SafeArea And SubView()"
+	  },
+	  "--- React Native SubView()": {
+		"prefix": "rnsubviewfunction",
+		"body": [
+		  "const  ${1: originalName} = () => {",
+		  "    return (  ",
+		  "       <View style={{${2}}}>",
+		  "        ${0}",
+		  "       </View>",
+		  "    );",
+		  "  }"
+		],
+		"description": "--- React NativeSubView()"
+	  },
+	  "--- React Native StyleSheet Function": {
+		"prefix": "rnstylesheetfunction",
+		"body": [
+		  "const $1 = StyleSheet.create({",
+		  "  ${0}",
+		  "});"
+		],
+		"description": "--- React Native StyleSheet Function"
+	  },
+	  "--- React Native : Spacer()": {
+		"prefix": "rnspacer",
+		"body": [
+		  "<View style={{ flex: 1 }}></View>"
+		],
+		"description": "--- React Native : Spacer()"
+	  },
+	  "React: Logo image from Internet": {
+		"prefix": "rnlogonetworkimage",
+		"body": [
+		  "<View style={{ flex: 1, marginHorizontal: $1, backgroundColor: 'lemonchiffon', height: $2 }}>",
+		  "<ImageBackground source={{ uri: 'https://reactjs.org/logo-og.png' }} imageStyle={{ opacity: 1 }} resizeMode=\"cover\" style={{ flex: 1, justifyContent: 'center' }} />",
+		  "</View>"
+		],
+		"description": "React: Logo Network Image"
+	  },
+
+
+
 	
+
+	  
+
 }

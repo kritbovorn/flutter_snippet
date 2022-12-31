@@ -1,0 +1,317 @@
+{
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"--- React Native component Text()": {
+		"prefix": "rntext",
+		"body": [
+		  " <Text style= {[$2]}>$1</Text>$0"
+		],
+		"description": "component Text()"
+	  },
+	  "--- React Native component View()": {
+		"prefix": "rnview",
+		"body": [
+		  " <View style={[$1]}>$3</View>${0}"
+		],
+		"description": "--- React Native component Text()"
+	  },
+	  "--- React Native component View Row Layout": {
+		"prefix": "rnviewrow",
+		"body": [
+		  "<View style={{ flexDirection: \"row\", height: sc.minCardHeight, margin: sc.midPad }} >",
+		  "    ${0}",
+		  "</View>"
+		],
+		"description": "--- React Native component View Row Layout"
+	  },
+	  "--- React Native component TextField()": {
+		"prefix": "rntextfield",
+		"body": [
+		  "<View style={{ flex: 1}}>",
+		  "    <TextInput style={{flex: 1, borderRadius: sc.maxSpace, borderWidth: sc.minSpace, borderColor: colors.thirdBlue, paddingHorizontal: sc.midPad, backgroundColor: colors.primaryBackground, fontSize: sc.title}} placeholder=\"${1}\" defaultValue=\"${2}\" onChangeText={() => {${0}}} />",
+		  "</View>"
+		],
+		"description": "--- React Native component TextField()"
+	  },
+	  "--- React Native component Button have border": {
+		"prefix": "rnbuttonborder",
+		"body": [
+		  "<View style={{ flex: 1 , alignItems: 'center' }}>",
+		  "    <TouchableHighlight underlayColor={'transparent'} onPress={() => {${0}}} style={{ flex: 1, width: '80%', backgroundColor: colors.primaryBlue, borderWidth: sc.midSpace, borderColor: colors.border, alignItems: 'center', justifyContent: 'center', borderRadius: sc.midSpace }}>",
+		  "        <TextBody title=\"${1}\" color={colors.white} />",
+		  "    </TouchableHighlight>",
+		  "</View>"
+		],
+		"description": "--- React Native component Button have border"
+	  },
+	  "--- React Native component ScrollView()": {
+		"prefix": "rnscrollview",
+		"body": [
+		  "<ScrollView style={$1}>${2}</ScrollView>${0}"
+		],
+		"description": "--- React Native component ScrollView()"
+	  },
+	  "--- React Native component Image()": {
+		"prefix": "rnimage",
+		"body": [
+		  "<Image style={$1} source={{",
+		  "            uri: '$2'",
+		  "           }} />${0}"
+		],
+		"description": "--- React Native component Image()"
+	  },
+	  "--- React Native Function()": {
+		"prefix": "rnfunction",
+		"body": [
+		  "import React from \"react\";",
+		  "import { Text ,View} from 'react-native';",
+		  "",
+		  "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = () => {",
+		  "  return (  ",
+		  "     <View style={[$2]} > ",
+		  "      ${0}",
+		  "    </View>",
+		  "  );",
+		  "}",
+		  "",
+		  "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};",
+		  "",
+		  "",
+		  "",
+		  ""
+		],
+		"description": "--- React Native Function()"
+	  },
+	  "---React Native Screen function": {
+		"prefix": "rnfunctionscreen",
+		"body": [
+		  "import React from \"react\";",
+		  "import { SafeAreaView, StatusBar, Text ,View} from 'react-native';",
+		  "",
+		  "const   ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = () => {",
+		  "  return (  ",
+		  "    <SafeAreaView style={{ flex: 1, backgroundColor: \"blue\"}}>",
+		  "    <StatusBar barStyle=\"light-content\" />",
+		  "    <View style={{ flex: 597}}>",
+		  "      ${0}",
+		  "    </View>",
+		  "",
+		  "  </SafeAreaView>",
+		  "  );",
+		  "}",
+		  "",
+		  "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};",
+		  "",
+		  "",
+		  "",
+		  ""
+		],
+		"description": "---React Native Screen function"
+	  },
+	  "--- React Native Class()": {
+		"prefix": "rnclass",
+		"body": [
+		  "import React, { Component } from 'react';",
+		  "import { Text, View } from 'react-native';",
+		  "",
+		  "class  ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends Component {",
+		  "  render() {",
+		  "    return (",
+		  "      <Text>Hello, I am your cat!</Text>",
+		  "    );",
+		  "  }",
+		  "}",
+		  "",
+		  "export default  ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};"
+		],
+		"description": "--- React Native Class()"
+	  },
+	  "--- React Native SafeArea()": {
+		"prefix": "rnsafearea",
+		"body": [
+		  "<Fragment>",
+		  "  <SafeAreaView style={{ flex: 0, backgroundColor: '${1}' }} />",
+		  "  <SafeAreaView style={{ flex: 1, backgroundColor: '${2}' }}>",
+		  "    <StatusBar barStyle=\"light-content\" />",
+		  "    <View style={[{ flex: 1, backgroundColor: '${4}' }]}>",
+		  "      ${0}",
+		  "    </View>",
+		  "  </SafeAreaView>",
+		  "</Fragment>"
+		],
+		"description": "--- React Native SafeArea()"
+	  },
+	  "--- React Native SubView()": {
+		"prefix": "rnsubviewfunction",
+		"body": [
+		  "const  ${1: originalName} = () => {",
+		  "    return (  ",
+		  "       <View style={[{${2}}]}>",
+		  "        ${0}",
+		  "       </View>",
+		  "    );",
+		  "  }"
+		],
+		"description": "--- React NativeSubView()"
+	  },
+	  "--- React Native StyleSheet Function": {
+		"prefix": "rnstylesheetfunction",
+		"body": [
+		  "const $1 = StyleSheet.create({",
+		  "  ${0}",
+		  "});"
+		],
+		"description": "--- React Native StyleSheet Function"
+	  },
+	  "--- React Native : Spacer()": {
+		"prefix": "rnspacer",
+		"body": [
+		  "<View style={[{ flex: 1 }]}>$0</View>"
+		],
+		"description": "--- React Native : Spacer()"
+	  },
+	  "React: Logo image from Internet": {
+		"prefix": "rnlogonetworkimage",
+		"body": [
+		  "<View style={{ flex: 1, marginHorizontal: $1, backgroundColor: 'lemonchiffon', height: $2 }}>",
+		  "<ImageBackground source={{ uri: 'https://reactjs.org/logo-og.png' }} imageStyle={{ opacity: 1 }} resizeMode=\"cover\" style={{ flex: 1, justifyContent: 'center' }} />",
+		  "</View>"
+		],
+		"description": "React: Logo Network Image"
+	  },
+	  "React Native : Button Standard ": {
+		"prefix": "rnbuttonsimple",
+		"body": [
+		  "<View style={{ flex: 1, alignItems: 'center' }}>",
+		  "    <TouchableHighlight underlayColor={'transparent'} onPress={() => { $5 }} style={{ width: '80%', height: '70%', backgroundColor: \"$1\", alignItems: 'center', justifyContent: 'center' }]}>",
+		  "         <Text style= {[{fontSize: $3, color: \"$4\"}]}>$2</Text>",
+		  "    </TouchableHighlight>",
+		  "</View>$0"
+		],
+		"description": "React Native : Button Standard"
+	  },
+	  "Set Shadow for View()": {
+		"prefix": "rnviewshadowborder",
+		"body": [
+		  " <View style={[{ height: ${1}, borderTopColor: 'lavenderblush', borderTopWidth: sc.minSpace, shadowOpacity: 0.05 }]}>",
+		  "    ${0}",
+		  "</View>"
+		],
+		"description": "Set Shadow for View()"
+	  },
+	  "React Native : Screen": {
+		"prefix": "rnscreen",
+		"body": [
+		  "import React, { Fragment } from \"react\";",
+		  "import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';",
+		  "import { colors, sc } from \"./src/utils/import/import_options\";",
+		  "",
+		  "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = () => {",
+		  "  return (",
+		  "    <Fragment>",
+		  "      <SafeAreaView style={{ flex: 0, backgroundColor: ${2|colors.background, colors.backgroundPrimary|} }} />",
+		  "      <SafeAreaView style={{ flex: 1, backgroundColor: ${3|colors.background, colors.backgroundPrimary|} }}>",
+		  "        <StatusBar barStyle=\"light-content\" />",
+		  "        <View style={[styles.container, { $4 }]} >",
+		  "          <Text style={[{ fontSize: sc.head }]}>${5:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}</Text>$0",
+		  "        </View>",
+		  "      </SafeAreaView>",
+		  "    </Fragment>",
+		  "  );",
+		  "}",
+		  "",
+		  "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};",
+		  "",
+		  "const styles = StyleSheet.create({",
+		  "  container: {",
+		  "    flex: 1,",
+		  "    alignItems: 'center',",
+		  "    justifyContent: 'center'",
+		  "  }",
+		  "});",
+		  "",
+		  "",
+		  "",
+		  ""
+		],
+		"description": "React Native : Screen"
+	  },
+	  // Component
+	  "React Native : console.log()": {
+		"prefix": "rnlog",
+		"body": [
+		  "console.log(\"$$$$$ ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} ::: Line : ${TM_LINE_NUMBER} ::: \" +  $1); $0",
+		  ""
+		],
+		"description": "React Native : console.log()"
+	  },
+	  "React Native : Component : TextInput()": {
+		"prefix": "rncomponenttextinput",
+		"body": [
+		  "import React from \"react\";",
+		  "import { KeyboardTypeOptions, StyleSheet, Text, TextInput, View } from 'react-native';",
+		  "import { sc } from \"../../utils/import/import_options\";",
+		  "",
+		  "type Props = {",
+		  "    placeholder: string,",
+		  "    onChangeText(value: string): void,",
+		  "    keyboardType?: KeyboardTypeOptions,",
+		  "    isSecure?: boolean,",
+		  "    multiline?: boolean,",
+		  "    maxLength?: number,",
+		  "    editable?: boolean",
+		  "}",
+		  "",
+		  "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}; = ({ placeholder, onChangeText, keyboardType, isSecure, multiline, maxLength, editable }: Props) => {",
+		  "    return (",
+		  "        <View style={[{ height: sc.buttonHeight }]}>",
+		  "            <TextInput",
+		  "                placeholder={placeholder}",
+		  "                keyboardType={keyboardType}",
+		  "                secureTextEntry={isSecure ?? false}",
+		  "                style={[styles.input]}",
+		  "                multiline={multiline ?? false}",
+		  "                maxLength={maxLength}",
+		  "                editable={editable}",
+		  "                onChangeText={(value: string) => onChangeText(value)}",
+		  "            />",
+		  "        </View>",
+		  "    );",
+		  "}",
+		  "",
+		  "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};;",
+		  "",
+		  "const styles = StyleSheet.create({",
+		  "    input: {",
+		  "        borderWidth: sc.minSpace,",
+		  "        borderColor: \"lightgrey\",",
+		  "        borderRadius: sc.padMin,",
+		  "        padding: sc.padMid",
+		  "    }",
+		  "});",
+		  "",
+		  "",
+		  "",
+		  ""
+		],
+		"description": "React Native : Component : TextInput()"
+	  },
+
+
+
+	
+
+	  
+
+}

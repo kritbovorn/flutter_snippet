@@ -11,69 +11,153 @@
 	// 		"$2"
 	// 	],
 	// 	"description": "Log output to console"
-	// },
-	  
-	  "สร้าง Class ใน React": {
-		"prefix": "reactclasscomponent",
+	// }
+	"--- React Native component Text()": {
+		"prefix": "rntext",
 		"body": [
-		  "import React from 'react'",
+		  " <Text style= {$1}>${2}</Text>${0}"
+		],
+		"description": "component Text()"
+	  },
+	  "--- React Native component View()": {
+		"prefix": "rnview",
+		"body": [
+		  " <View style={$1}>$3</View>${0}"
+		],
+		"description": "--- React Native component Text()"
+	  },
+	  "--- React Native component TextField()": {
+		"prefix": "rntextfield",
+		"body": [
+		  "<TextInput style={{$1} defaultValue=\"${2}\" />${0}"
+		],
+		"description": "--- React Native component TextField()"
+	  },
+	  "--- React Native component ScrollView()": {
+		"prefix": "rnscrollview",
+		"body": [
+		  "<ScrollView style={$1}>${2}</ScrollView>${0}"
+		],
+		"description": "--- React Native component ScrollView()"
+	  },
+	  "--- React Native component Image()": {
+		"prefix": "rnimage",
+		"body": [
+		  "<Image style={$1} source={{",
+		  "            uri: '$2'",
+		  "           }} />${0}"
+		],
+		"description": "--- React Native component Image()"
+	  },
+	  "--- React Native Function()": {
+		"prefix": "rnfunction",
+		"body": [
+		  "import React from \"react\";",
+		  "import { Text ,View} from 'react-native';",
 		  "",
-		  "class ${1:${TM_FILENAME_BASE}} extends React.Component {",
-		  "",
-		  "    constructor(props) {",
-		  "        super(props);",
-		  "",
-		  "        this.state = {$2}",
-		  "    }",
-		  "",
-		  "    render() {",
-		  "        return (",
-		  "            <div>",
-		  "                $3",
-		  "            </div>",
-		  "        );",
-		  "    };",
+		  "const   ${1: originalName} = () => {",
+		  "  return (  ",
+		  "     <View > ",
+		  "      ${0}",
+		  "    </View>",
+		  "  );",
 		  "}",
 		  "",
-		  "export default  ${1:${TM_FILENAME_BASE}};"
+		  "export default ${1: originalName};",
+		  "",
+		  "",
+		  "",
+		  ""
 		],
-		"description": "สร้าง Class"
+		"description": "--- React Native Function()"
 	  },
-	  "สร้าง Function Component": {
-		"prefix": "reactfunctioncomponent",
+	  "--- React Native Class()": {
+		"prefix": "rnclass",
 		"body": [
-		  "import React from 'react';",
+		  "import React, { Component } from 'react';",
+		  "import { Text, View } from 'react-native';",
 		  "",
-		  "function ${1:${TM_FILENAME_BASE}}() {",
+		  "class  ${1: originalName} extends Component {",
+		  "  render() {",
 		  "    return (",
-		  "        <div>",
-		  "            $2",
-		  "        </div>",
-		  "    )",
-		  "}",
-		  "",
-		  "export default ${1:${TM_FILENAME_BASE}};"
-		],
-		"description": "สร้าง Function Component"
-	  },
-	  "ตัวแปร Component": {
-		"prefix": "reactconstantcomponent",
-		"body": [
-		  "import React from 'react';",
-		  "",
-		  "const ${1:${TM_FILENAME_BASE}} = () => {",
-		  "    return (",
-		  "        <div>",
-		  "            $2",
-		  "        </div>",
+		  "      <Text>Hello, I am your cat!</Text>",
 		  "    );",
-		  "};",
+		  "  }",
+		  "}",
 		  "",
-		  "export default ${1:${TM_FILENAME_BASE}};"
+		  "export default  ${1: originalName};"
 		],
-		"description": "ตัวแปร Component"
-	  }
+		"description": "--- React Native Class()"
+	  },
+	  "--- React Native SafeAreaView()": {
+		"prefix": "rnsafearea",
+		"body": [
+		  " <SafeAreaView>$0</SafeAreaView>"
+		],
+		"description": "--- React Native SafeAreaView()"
+	  },
+	  "--- React Native Cury bracket": {
+		"prefix": "rncurybracket",
+		"body": [
+		  "{ ${1} }${0}"
+		],
+		"description": "--- React Native Cury bracket"
+	  },
+	  "--- React Native SafeArea And SubView()": {
+		"prefix": "rnsafeareasubview",
+		"body": [
+		  "<SafeAreaView>",
+		  "  <View style={{${1}}}>",
+		  "      $0",
+		  "  </View>",
+		  "</SafeAreaView>",
+		  " "
+		],
+		"description": "--- React Native SafeArea And SubView()"
+	  },
+	  "--- React Native SubView()": {
+		"prefix": "rnsubviewfunction",
+		"body": [
+		  "const  ${1: originalName} = () => {",
+		  "    return (  ",
+		  "       <View style={{${2}}}>",
+		  "        ${0}",
+		  "       </View>",
+		  "    );",
+		  "  }"
+		],
+		"description": "--- React NativeSubView()"
+	  },
+	  "--- React Native StyleSheet Function": {
+		"prefix": "rnstylesheetfunction",
+		"body": [
+		  "const $1 = StyleSheet.create({",
+		  "  ${0}",
+		  "});"
+		],
+		"description": "--- React Native StyleSheet Function"
+	  },
+	  "--- React Native : Spacer()": {
+		"prefix": "rnspacer",
+		"body": [
+		  "<View style={{ flex: 1 }}></View>"
+		],
+		"description": "--- React Native : Spacer()"
+	  },
+	  "React: Logo image from Internet": {
+		"prefix": "rnlogonetworkimage",
+		"body": [
+		  "<View style={{ flex: 1, marginHorizontal: $1, backgroundColor: 'lemonchiffon', height: $2 }}>",
+		  "<ImageBackground source={{ uri: 'https://reactjs.org/logo-og.png' }} imageStyle={{ opacity: 1 }} resizeMode=\"cover\" style={{ flex: 1, justifyContent: 'center' }} />",
+		  "</View>"
+		],
+		"description": "React: Logo Network Image"
+	  },
 
 
+
+	
+
+	  
 
 }

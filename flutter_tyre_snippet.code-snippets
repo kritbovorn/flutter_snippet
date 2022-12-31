@@ -1,0 +1,817 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",  //   scope  :  สามารถระบุได้ว่า  จะให้แสดงในภาษาไหน
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Fake Network Image": {
+		"prefix": "bfakenetworkimagebackground",
+		"body": "NetworkImage('https://img.freepik.com/free-photo/black-dark-asphalt-with-fine-grain-texture-close-up-photo_1095-989.jpg?w=1480'),",
+		"description": "รูปภาพทางเ็ต",
+	},
+	"Random Images from Internet": {
+		"prefix": "bfakeimages",
+		"body": [
+			"List<String> images = [",
+			"    \"https://picsum.photos/300/200?random=1\",",
+			"    \"https://picsum.photos/300/200?random=2\",",
+			"    \"https://picsum.photos/300/200?random=3\",",
+			"    \"https://picsum.photos/300/200?random=4\",",
+			"    \"https://picsum.photos/300/200?random=5\",",
+			"    \"https://picsum.photos/300/200?random=6\",",
+			"    \"https://picsum.photos/300/200?random=7\",",
+			"];"
+		],
+		"description": "ภาพซุ่มจาก Internet"
+	},
+	"Fake : Icons.data": {
+		"scope": "dart",
+		"prefix": "bfakeiconsdata",
+		"body": [
+			"List<IconData> iconDatas = [",
+			"    Icons.apple,",
+			"    Icons.android,",
+			"    Icons.window,",
+			"    Icons.facebook,",
+			"    Icons.south_america,",
+			"];"
+		],
+		"description": "ตัวอย่าง Icons.data หลายอัน"
+	},
+	"Custom StatelessWidget": {
+		"prefix": "bstless",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"",
+			"class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends StatelessWidget {",
+			"const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({ Key? key }) : super(key: key);",
+			"",
+			"  @override",
+			"  Widget build(BuildContext context){",
+			"    return $1($2)$0;",
+			"  }",
+			"}"
+		],
+		"description": "Custom StatelessWidget"
+	},
+	"Custom StatefulWidget": {
+		"prefix": "bstful",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"",
+			"class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends StatefulWidget {",
+			"  const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({Key? key}) : super(key: key);",
+			"",
+			"  @override",
+			"  State<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}> createState() => _${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}State();",
+			"}",
+			"",
+			"class _${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}State extends State<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}> {",
+			"  @override",
+			"  Widget build(BuildContext context) {",
+			"    return $1($2)$0;",
+			"  }",
+			"}"
+		],
+		"description": "Custom StatefulWidget"
+	},
+	"Main() Entry point": {
+		"prefix": "bmain",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"",
+			"void main() {",
+			"  runApp(const MyApp());",
+			"}",
+			"",
+			"class MyApp extends StatelessWidget {",
+			"  const MyApp({Key? key}) : super(key: key);",
+			"",
+			"  @override",
+			"  Widget build(BuildContext context) {",
+			"    return MaterialApp(",
+			"      debugShowCheckedModeBanner: false,",
+			"      title: '${1:Flutter Project}',",
+			"      theme: ThemeData(",
+			"        primarySwatch: Colors.blue,",
+			"        visualDensity: VisualDensity.adaptivePlatformDensity,",
+			"      ),",
+			"      home: const $2($0),",
+			"    );",
+			"  }",
+			"}"
+		],
+		"description": "สร้าง Main()"
+	},
+	"TextStyle() Snippets": {
+		"prefix": "btextstyle",
+		"body": [
+			"Text(",
+			"  $1,",
+			"  style: TextStyle(",
+			"  color: $2,",
+			"  fontSize: $3,",
+			"  fontWeight: FontWeight.$0,",
+			"  ),",
+			"),"
+		],
+		"description": "TextStyle() Snippets"
+	},
+	"Style Text Snippets": {
+		"prefix": "btstyle",
+		"body": [
+			"style: TextStyle(",
+			"  color: $1,",
+			"  fontSize: $2,",
+			"  fontWeight: FontWeight.$0,",
+			"),"
+		],
+		"description": "Style Text Snippets"
+	},
+	"Service for connect DataBase API": {
+		"prefix": "bmethodapiservice Basic",
+		"body": [
+			"import 'package:http/http.dart' as http;  // *   Import   http   package",
+			"",
+			"class ApiService {",
+			"  Future<List<${1: Object}>?> ${2: method_name}() async {",
+			"    var client = http.Client();",
+			"    var url = '$0';",
+			"    var uri = Uri.parse(url);",
+			"",
+			"    var response = await client.get(uri);",
+			"    if (response.statusCode == 200) {",
+			"      var json = response.body;",
+			"      return postFromJson(json);  // * Use     app.quicktype.io   to convert json to Dart",
+			"    }",
+			"    return null;",
+			"  }",
+			"}"
+		],
+		"description": "Service for connect DataBase API"
+	},
+	"Theme of Context TextTheme": {
+		"prefix": "bthemecontext",
+		"body": [
+			"Theme.of(context)$0"
+		],
+		"description": "Theme of Context"
+	},
+	"All Screen height of device": {
+		"prefix": "bscreenheight",
+		"body": [
+			" double screenHeight = MediaQuery.of(context).size.height -",
+			"        MediaQuery.of(context).padding.top -",
+			"        kToolbarHeight - kBottomNavigationBarHeight;"
+		],
+		"description": "Screen height of device"
+	},
+	"Media Screen Size": {
+		"prefix": "bscreensize",
+		"body": [
+			" Size screenSize = MediaQuery.of(context).size;$0"
+		],
+		"description": "Media Screen Size"
+	},
+	"Text()": {
+		"prefix": "btext",
+		"body": [
+			"Text($1)$0"
+		],
+		"description": "Text()"
+	},
+	"Text: Theme.of(context).textTheme.": {
+		"prefix": "btexttheme",
+		"body": [
+			" Text(",
+			"   $1,",
+			"   style: Theme.of(context)$2,",
+			" ),$0"
+		],
+		"description": "Text: Theme.of(context).textTheme."
+	},
+	"Debug Print()": {
+		"prefix": "bdebugprint",
+		"body": [
+			" debugPrint('${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} : Line #${TM_LINE_NUMBER} ::: $1');$0"
+		],
+		"description": "Debug Print()"
+	},
+	"Decare varaible in String": {
+		"prefix": "${}",
+		"body": [
+			" ${$1},$0"
+		],
+		"description": "Decare varaible in String"
+	},
+	"FutureBuilder()": {
+		"prefix": "bfuturebuilder",
+		"body": [
+			"FutureBuilder<$1?>(",
+			"  future: $2,",
+			"  builder: (context, snapshot) {",
+			"    return $3;",
+			"  },",
+			"),$0"
+		],
+		"description": "FutureBuilder()"
+	},
+	"SetState() method": {
+		"prefix": "bsetstate",
+		"body": [
+			"setState(() => $1);$0"
+		],
+		"description": "SetState() method"
+	},
+	"Arrow Function": {
+		"prefix": "ba",
+		"body": [
+			"($1) => $2,$0"
+		],
+		"description": "Arrow Function"
+	},
+	"Custom Scaffold()": {
+		"prefix": "bscaffold",
+		"body": [
+			"Scaffold(",
+			"  appBar: AppBar($1),",
+			"  body: $0,",
+			")"
+		],
+		"description": "Custom Scaffold()"
+	},
+	"Navigator() push": {
+		"prefix": "bnavigatorpush",
+		"body": [
+			"Navigator.push(context, MaterialPageRoute(builder: (context) => $1,),);$0",
+			""
+		],
+		"description": "Navigator() push"
+	},
+	"Navigator() pop": {
+		"prefix": "bnavigatorpop",
+		"body": [
+			"Navigator.pop(context)$0"
+		],
+		"description": "Navigator() pop"
+	},
+	"SizedBox.shrink()": {
+		"prefix": "bsizeboxshrink",
+		"body": [
+			" SizedBox.shrink()$0"
+		],
+		"description": "SizedBox.shrink()"
+	},
+	"README.md Image Logo": {
+		"prefix": "breadmeimagelogo",
+		"body": [
+			"<img src=\"https://user-images.githubusercontent.com/10919051/178402698-b81b894c-6836-4da1-b465-6377594629e2.png\" width=\"40\" height=\"40\">"
+		],
+		"description": "README.md Image Logo"
+	},
+	"SizedBox(height:_)": {
+		"prefix": "bsizeboxheight",
+		"body": [
+			"const SizedBox(",
+			"  height: $1,",
+			"),$0"
+		],
+		"description": "SizedBox(height:_)"
+	},
+	"SizedBox(width:_)": {
+		"prefix": "bsizeboxwidth",
+		"body": [
+			"const SizedBox(",
+			"  width: $1,",
+			"),$0"
+		],
+		"description": "SizedBox(width:_)"
+	},
+	"Expanded SizedBox.shrink()": {
+		"prefix": "bexpandsizedboxshrink",
+		"body": [
+			"Expanded(",
+			"  child: SizedBox.shrink(),",
+			"),"
+		],
+		"description": "Expanded SizedBox.shrink()"
+	},
+	"Color Method for selected Index": {
+		"prefix": "bmethodcolorselected",
+		"body": [
+			"int selectedIndex = 0;",
+			"",
+			"  Color backgroundSelected(int index) {",
+			"    Color backgroundSelect = selectedIndex == index",
+			"        ? Theme.of(context).colorScheme.error",
+			"        : Theme.of(context).colorScheme.onError;",
+			"    return backgroundSelect;",
+			"  }",
+			"",
+			"  Color colorSelected(int index) {",
+			"    Color colorSelect = selectedIndex == index",
+			"        ? Theme.of(context).colorScheme.onError",
+			"        : Theme.of(context).colorScheme.secondary;",
+			"    return colorSelect;",
+			"  }"
+		],
+		"description": "Color Method for selected Index"
+	},
+	"Expanded Container()": {
+		"prefix": "bexpandcontainer",
+		"body": [
+			"Expanded(",
+			"    child: Container(",
+			"    color: Colors.green,",
+			"  ),",
+			"),"
+		],
+		"description": "Expanded Container()"
+	},
+	"Comment ????": {
+		"prefix": "b?",
+		"body": [
+			"// *?                               $0"
+		],
+		"description": "Comment ????"
+	},
+	"Comment !!!!! Red": {
+		"prefix": "b!",
+		"body": [
+			"// *!                               $0"
+		],
+		"description": "Comment !!!!! Red"
+	},
+	"Comment ***** default": {
+		"prefix": "b*",
+		"body": [
+			"// *                               $0"
+		],
+		"description": "Comment !!!!! Red"
+	},
+	"Comment TODO": {
+		"prefix": "btodo",
+		"body": [
+			"// ignore: todo",
+			"  // TODO:                            $0"
+		],
+		"description": "Comment TODO"
+	},
+	"launch.json": {
+		"prefix": "blaunchjson",
+		"body": [
+		  "{",
+		  "    // Use IntelliSense to learn about possible attributes.",
+		  "    // Hover to view descriptions of existing attributes.",
+		  "    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387",
+		  "    \"version\": \"0.2.0\",",
+		  "    \"configurations\": [",
+		  "        {",
+		  "            \"name\": \"iPhone SE\",",
+		  "            \"request\": \"launch\",",
+		  "            \"type\": \"dart\",",
+		  "            \"deviceId\": \"0607ED7E-D5CC-4063-98CC-5930E67CB198\",",
+		  "            \"args\": [",
+		  "                \"lib/main.dart\",",
+		  "                \"-- flavor\",",
+		  "                \"dev\",",
+		  "                \"--dart-define\",",
+		  "                \"env=moc\"",
+		  "            ]",
+		  "        },",
+		  "        {",
+		  "            \"name\": \"iPhone 13\",",
+		  "            \"request\": \"launch\",",
+		  "            \"type\": \"dart\",",
+		  "            \"deviceId\": \"A1CCC3B9-198D-41A2-BAD0-0E9AE51C44D2\",",
+		  "            \"args\": [",
+		  "                \"lib/main.dart\",",
+		  "                \"-- flavor\",",
+		  "                \"dev\",",
+		  "                \"--dart-define\",",
+		  "                \"env=moc\"",
+		  "            ]",
+		  "        },",
+		  "        {",
+		  "            \"name\": \"Pixel 5 API 30\",",
+		  "            \"request\": \"launch\",",
+		  "            \"type\": \"dart\",",
+		  "            \"deviceId\": \"emulator-5554\",",
+		  "            \"args\": [",
+		  "                \"lib/main.dart\",",
+		  "                \"-- flavor\",",
+		  "                \"dev\",",
+		  "                \"--dart-define\",",
+		  "                \"env=moc\"",
+		  "            ]",
+		  "        },",
+		  "        {",
+		  "            \"name\": \"iPhone 8 (Mobile)\",",
+		  "            \"request\": \"launch\",",
+		  "            \"type\": \"dart\",",
+		  "            \"deviceId\": \"8005c88ff0f5e564c996e982f27b374513327d2c\",",
+		  "            \"args\": [",
+		  "                \"\",",
+		  "                \"lib/main.dart\",",
+		  "                \"-- flavor\",",
+		  "                \"dev\",",
+		  "                \"--dart-define\",",
+		  "                \"env=moc\"",
+		  "            ]",
+		  "        },",
+		  "    ],",
+		  "    \"compounds\": [",
+		  "        {",
+		  "            \"name\": \"All Devices\",",
+		  "            \"configurations\": [",
+		  "                \"iPhone SE\",",
+		  "                \"iPhone 13\",",
+		  "                \"iPhone 8 (Mobile)\",",
+		  "                \"Pixel 5 API 30\"",
+		  "            ],",
+		  "        }",
+		  "    ]",
+		  "}"
+		],
+		"description": "launch.json"
+	  },
+	"README.md Structure": {
+		"prefix": "breadmestructure",
+		"body": [
+		  "<img src=\"https://user-images.githubusercontent.com/10919051/178402698-b81b894c-6836-4da1-b465-6377594629e2.png\" width=\"40\" height=\"40\">",
+		  "",
+		  "# Header 1",
+		  "",
+		  "Paragraph Paragraph Paragraph Paragraph",
+		  "",
+		  "## Header 2 ",
+		  "",
+		  "### Header 3   ",
+		  "",
+		  "#### Header 4   ",
+		  "",
+		  "##### Header 5    ",
+		  "",
+		  "###### Header 6  ",
+		  "",
+		  "---   ",
+		  "> # Order list   ",
+		  "",
+		  "- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)",
+		  "- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)",
+		  "",
+		  "For help getting started with Flutter development, view the",
+		  "[online documentation](https://docs.flutter.dev/), which offers tutorials,",
+		  "",
+		  "",
+		  "> Somethings Somethings  ",
+		  "> Somethings Somethings  ",
+		  "> Somethings Somethings  ",
+		  "",
+		  "# project  <img src=\"https://user-images.githubusercontent.com/10919051/178402698-b81b894c-6836-4da1-b465-6377594629e2.png\" width=\"40\" height=\"40\">",
+		  "",
+		  "",
+		  "## Resource by [some one]() on Git hub  ",
+		  "",
+		  "> ## Youtube Chanel   ",
+		  "",
+		  "",
+		  "[]() 👁️ 📺 📺 📺 👁️   ",
+		  "",
+		  "",
+		  "",
+		  "> # Listsssss",
+		  "",
+		  "- Somethings   ",
+		  "- Somethings  ",
+		  "1. first list   ",
+		  "    1. sub list  ",
+		  "    2. sub sub list   ",
+		  "",
+		  "    ---",
+		  "         sub sub sub list  ",
+		  "        2. sub sub sub list  ",
+		  "         sub sub sub list  ",
+		  "",
+		  "    ---",
+		  "",
+		  "            1. sub sub sub sub list  ",
+		  "            2. sub sub sub sub list   ",
+		  "",
+		  "---   ",
+		  "",
+		  "2. second list  ",
+		  "3. third list ",
+		  "",
+		  "---   ",
+		  "",
+		  "> # Italics   ",
+		  "",
+		  "",
+		  "*Make Italics paragraph [somethings]() again*   ",
+		  "_Make Italics paragraph [somethings]() again_   ",
+		  "",
+		  "---    ",
+		  "",
+		  "> # Bold   ",
+		  "",
+		  "",
+		  "**Make Bold Bold Bold paragraph [somethings]() again**   ",
+		  "__Make Bold Bold Bold paragraph [somethings]() again__   ",
+		  "",
+		  "---",
+		  "",
+		  "",
+		  "> # Snippets   ",
+		  "",
+		  "`This is a code snippets snippets snippets`   ",
+		  "",
+		  "---   ",
+		  "",
+		  "",
+		  "> # Code block   ",
+		  "",
+		  "",
+		  "``` dart  ",
+		  "if (somethings true) {",
+		  "    make somethings;",
+		  "}",
+		  "```   ",
+		  "",
+		  "---",
+		  "",
+		  "> # Blockquote   ",
+		  "",
+		  "> This is a blockquote",
+		  "> * This is a list item within a blockquote",
+		  "> * This is a list item within a blockquote",
+		  "> * This is a list item within a blockquote",
+		  "",
+		  "",
+		  "---   ",
+		  "",
+		  "> # Quotes:",
+		  "",
+		  "> \"I make Jessica Simpson look like a rock scientist.\"",
+		  "",
+		  "> - Tara Reid, actress   ",
+		  "",
+		  "> -- Tara Reid, actress ",
+		  "",
+		  "",
+		  "---     ",
+		  "",
+		  "> # Choice",
+		  "",
+		  "- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported",
+		  "- [x] list syntax required (any unordered or ordered list supported) ",
+		  "- [x] this is a complete item ",
+		  "- [ ] this is an incomplete item    ",
+		  "",
+		  "",
+		  "---     ",
+		  "",
+		  "> # Table  ",
+		  "",
+		  "***First Header first***  | Second Header ",
+		  " ------------ | ------------- ",
+		  "Content from cell 1 | Content from cell 2 ",
+		  "Content in the first column | content in the second column",
+		  "Content from cell 1 | Content from cell 2 ",
+		  "Content in the first column | content in the second column",
+		  "Content in the first column | content in the second   ",
+		  "Content in the first column | content in the second    ",
+		  "",
+		  "",
+		  "---   ",
+		  "",
+		  "[comment]: # (Still another comment)   ",
+		  "[//]: # (Yet another comment)  ",
+		  "",
+		  "[]: # (This is a comment)  ",
+		  "[]: # \"And this is a comment\"  ",
+		  "[]: # 'Also this is a comment'   ",
+		  ""
+		],
+		"description": "README.md Structure"
+	  },
+	  "Lorem 5": {
+		"prefix": "blorem5",
+		"body": [
+		  "Lorem ipsum dolor sit amet."
+		],
+		"description": "Lorem 5"
+	  },
+	  "Lorem 10": {
+		"prefix": "blorem10",
+		"body": [
+		  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, maiores!"
+		],
+		"description": "Lorem 10"
+	  },
+	  "Lorem 20": {
+		"prefix": "blorem20",
+		"body": [
+		  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis aliquam repudiandae beatae necessitatibus corporis quibusdam omnis aspernatur, accusamus voluptates blanditiis.",
+		  ""
+		],
+		"description": "Lorem 20"
+	  },
+	  "Lorem 30": {
+		"prefix": "blorem30",
+		"body": [
+		  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem saepe nulla maiores expedita natus corrupti iste repellendus itaque. Error asperiores reprehenderit praesentium recusandae. Quis eum architecto, ex nesciunt officiis enim."
+		],
+		"description": "Lorem 30"
+	  },
+	  "Height of Screen Content not include SafeArea()": {
+		"prefix": "bscreenheight",
+		"body": [
+		  "double screenHeight = MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top - MediaQuery.of(context).padding.bottom;"
+		],
+		"description": "Height of Screen Content not include SafeArea()"
+	  },
+	  "Model for Firbase Firestore": {
+		"prefix": "bmodelfirebase",
+		"body": [
+		  "class City {",
+		  "  final String? name;",
+		  "  final String? state;",
+		  "  final String? country;",
+		  "  final bool? capital;",
+		  "  final int? population;",
+		  "  final List<String>? regions;",
+		  "",
+		  "  City({",
+		  "    this.name,",
+		  "    this.state,",
+		  "    this.country,",
+		  "    this.capital,",
+		  "    this.population,",
+		  "    this.regions,",
+		  "  });",
+		  "",
+		  "  factory City.fromFirestore(",
+		  "    DocumentSnapshot<Map<String, dynamic>> snapshot,",
+		  "    SnapshotOptions? options,",
+		  "  ) {",
+		  "    final data = snapshot.data();",
+		  "    return City(",
+		  "      name: data?['name'],",
+		  "      state: data?['state'],",
+		  "      country: data?['country'],",
+		  "      capital: data?['capital'],",
+		  "      population: data?['population'],",
+		  "      regions:",
+		  "          data?['regions'] is Iterable ? List.from(data?['regions']) : null,",
+		  "    );",
+		  "  }",
+		  "",
+		  "  Map<String, dynamic> toFirestore() {",
+		  "    return {",
+		  "      if (name != null) \"name\": name,",
+		  "      if (state != null) \"state\": state,",
+		  "      if (country != null) \"country\": country,",
+		  "      if (capital != null) \"capital\": capital,",
+		  "      if (population != null) \"population\": population,",
+		  "      if (regions != null) \"regions\": regions,",
+		  "    };",
+		  "  }",
+		  "}"
+		],
+		"description": "Model for Firbase Firestore"
+	  },
+	  "Create InheritedWidget Notifier": {
+		"prefix": "binheritedwidget",
+		"body": [
+		  "import 'package:flutter/material.dart';",
+		  "",
+		  "class WidgetChangeNotifier extends ChangeNotifier {",
+		  "  int _value = 0;",
+		  "",
+		  "  UserModel _userModel = UserModel();",
+		  "",
+		  "  UserModel get userModel => _userModel;",
+		  "  int? get userCounter => _userModel.counter;",
+		  "",
+		  "  int get value => _value;",
+		  "",
+		  "  set userModel(UserModel newValue) {",
+		  "    if (newValue != _userModel) {",
+		  "      _userModel = newValue;",
+		  "      notifyListeners();",
+		  "    }",
+		  "  }",
+		  "",
+		  "  set userCounter(int? newValue) {",
+		  "    if (newValue != _userModel.counter) {",
+		  "      _userModel.counter = newValue;",
+		  "      notifyListeners();",
+		  "    }",
+		  "  }",
+		  "",
+		  "  set value(int newValue) {",
+		  "    if (newValue != _value) {",
+		  "      _value = newValue;",
+		  "      notifyListeners();",
+		  "    }",
+		  "  }",
+		  "",
+		  "  void increment() {",
+		  "    _value += 1;",
+		  "    notifyListeners();",
+		  "  }",
+		  "}",
+		  "",
+		  "class WidgetInheritedNotifier extends InheritedNotifier<WidgetChangeNotifier> {",
+		  "  const WidgetInheritedNotifier(",
+		  "      {super.key,",
+		  "      required WidgetChangeNotifier changeNotifier,",
+		  "      required Widget child})",
+		  "      : super(notifier: changeNotifier, child: child);",
+		  "",
+		  "  static int of(BuildContext context) =>",
+		  "      context",
+		  "          .dependOnInheritedWidgetOfExactType<WidgetInheritedNotifier>()",
+		  "          ?.notifier",
+		  "          ?.value ??",
+		  "      0;",
+		  "",
+		  "  static void ofIncrement(BuildContext context) => context",
+		  "      .dependOnInheritedWidgetOfExactType<WidgetInheritedNotifier>()",
+		  "      ?.notifier",
+		  "      ?.increment();",
+		  "",
+		  "  static int? ofUser(BuildContext context) =>",
+		  "      context",
+		  "          .dependOnInheritedWidgetOfExactType<WidgetInheritedNotifier>()",
+		  "          ?.notifier",
+		  "          ?.userCounter ??",
+		  "      0;",
+		  "",
+		  "  static UserModel? ofUserModel(BuildContext context) => context",
+		  "      .dependOnInheritedWidgetOfExactType<WidgetInheritedNotifier>()",
+		  "      ?.notifier",
+		  "      ?.userModel;",
+		  "}",
+		  ""
+		],
+		"description": "Create InheritedWidget Notifier"
+	  },
+	  "Widget GlassMorphism()": {
+		"prefix": "bwidgetglassmorphism",
+		"body": [
+		  "class GlassMorphism extends StatelessWidget {",
+		  "  final double blur;",
+		  "  final double opacity;",
+		  "  final Widget child;",
+		  "  const GlassMorphism({",
+		  "    Key? key,",
+		  "    required this.blur,",
+		  "    required this.opacity,",
+		  "    required this.child,",
+		  "  }) : super(key: key);",
+		  "",
+		  "  @override",
+		  "  Widget build(BuildContext context) {",
+		  "    return ClipRRect(",
+		  "      borderRadius: BorderRadius.circular(20),",
+		  "      child: BackdropFilter(",
+		  "        filter: ImageFilter.blur(sigmaX: blur, sigmaY: blur),",
+		  "        child: Container(",
+		  "          decoration: BoxDecoration(",
+		  "            color: Colors.white.withOpacity(opacity),",
+		  "            borderRadius: const BorderRadius.all(Radius.circular(20)),",
+		  "            border:",
+		  "                Border.all(width: 1.5, color: Colors.white.withOpacity(0.2)),",
+		  "          ),",
+		  "          child: child,",
+		  "        ),",
+		  "      ),",
+		  "    );",
+		  "  }",
+		  "}"
+		],
+		"description": "Widget GlassMorphism()"
+	  },
+	  "Extension Expanded Equally()": {
+		"prefix": "bextensionexpandedequally",
+		"body": [
+		  "extension ExpandedEqually on Iterable<Widget> {",
+		  "  Iterable<Widget> expandEqually() => map((e) => Expanded(child: e));",
+		  "}"
+		],
+		"description": "Extension Expanded Equally()"
+	  }
+}
