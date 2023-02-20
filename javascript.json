@@ -153,6 +153,22 @@
 		],
 		"description": "React: Logo Network Image"
 	  },
+	  "React Native Configure (File)": {
+		"prefix": "rnconfigure",
+		"body": [
+		  "module.exports = {",
+		  "  project: {",
+		  "    ios: {",
+		  "      sourceDir: './ios',",
+		  "    },",
+		  "    android: {}",
+		  "  },",
+		  "  assets: ['./src/assets/fonts/']",
+		  "}",
+		  "  "
+		],
+		"description": "React Native Configure (File)"
+	  }
 
 
 

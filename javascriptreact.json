@@ -153,6 +153,13 @@
 		],
 		"description": "React: Logo Network Image"
 	  },
+	  "ช่องว่างระหว่าง Word": {
+		"prefix": "rnwordspacing",
+		"body": [
+		  "&#xFEFF; &#xFEFF;"
+		],
+		"description": "ช่องว่างระหว่าง Word"
+	  }
 
 
 

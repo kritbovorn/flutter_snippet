@@ -26,35 +26,30 @@
 		],
 		"description": "--- React Native component Text()"
 	  },
-	  "--- React Native component View Row Layout": {
-		"prefix": "rnviewrow",
-		"body": [
-		  "<View style={{ flexDirection: \"row\", height: sc.minCardHeight, margin: sc.midPad }} >",
-		  "    ${0}",
-		  "</View>"
-		],
-		"description": "--- React Native component View Row Layout"
-	  },
-	  "--- React Native component TextField()": {
+	  "React Native Text Input": {
 		"prefix": "rntextfield",
 		"body": [
-		  "<View style={{ flex: 1}}>",
-		  "    <TextInput style={{flex: 1, borderRadius: sc.maxSpace, borderWidth: sc.minSpace, borderColor: colors.thirdBlue, paddingHorizontal: sc.midPad, backgroundColor: colors.primaryBackground, fontSize: sc.title}} placeholder=\"${1}\" defaultValue=\"${2}\" onChangeText={() => {${0}}} />",
-		  "</View>"
+		  "<TextInput",
+		  "                style={{ height: sc.buttonHeight, borderRadius: sc.maxSpace, borderWidth: sc.minSpace, borderColor: colors.thirdBlue, paddingHorizontal: sc.padMid, backgroundColor: colors.primaryBackground, fontSize: sc.title, marginVertical: sc.caption }}",
+		  "                placeholder=\"$1\"",
+		  "                defaultValue=\"$2\"",
+		  "                onChangeText={(value) => { $3}}",
+		  "            />$0"
 		],
-		"description": "--- React Native component TextField()"
+		"description": "React Native Text Input"
 	  },
-	  "--- React Native component Button have border": {
+	  "React Native Button Border": {
 		"prefix": "rnbuttonborder",
 		"body": [
-		  "<View style={{ flex: 1 , alignItems: 'center' }}>",
-		  "    <TouchableHighlight underlayColor={'transparent'} onPress={() => {${0}}} style={{ flex: 1, width: '80%', backgroundColor: colors.primaryBlue, borderWidth: sc.midSpace, borderColor: colors.border, alignItems: 'center', justifyContent: 'center', borderRadius: sc.midSpace }}>",
-		  "        <TextBody title=\"${1}\" color={colors.white} />",
-		  "    </TouchableHighlight>",
-		  "</View>"
+		  "<TouchableOpacity",
+		  "                    onPress={() => { }}",
+		  "                    style={{ height: sc.buttonHeight, width: \"100%\", backgroundColor: colors.primaryBlue, borderWidth: sc.midSpace, borderColor: colors.backgroundAuth, alignItems: 'center', justifyContent: 'center', borderRadius: sc.midSpace, marginVertical: sc.body }}",
+		  "                >",
+		  "                    <Text style={[{color: colors.white, fontSize: sc.body}]}>$1</Text>",
+		  "                </TouchableOpacity>$0"
 		],
-		"description": "--- React Native component Button have border"
-	  },
+		"description": "React Native Button Border"
+	  },	
 	  "--- React Native component ScrollView()": {
 		"prefix": "rnscrollview",
 		"body": [
@@ -152,19 +147,6 @@
 		],
 		"description": "--- React Native SafeArea()"
 	  },
-	  "--- React Native SubView()": {
-		"prefix": "rnsubviewfunction",
-		"body": [
-		  "const  ${1: originalName} = () => {",
-		  "    return (  ",
-		  "       <View style={[{${2}}]}>",
-		  "        ${0}",
-		  "       </View>",
-		  "    );",
-		  "  }"
-		],
-		"description": "--- React NativeSubView()"
-	  },
 	  "--- React Native StyleSheet Function": {
 		"prefix": "rnstylesheetfunction",
 		"body": [
@@ -190,25 +172,16 @@
 		],
 		"description": "React: Logo Network Image"
 	  },
-	  "React Native : Button Standard ": {
-		"prefix": "rnbuttonsimple",
+	  
+	
+	  "React Native View Shadow": {
+		"prefix": "rnviewshadow",
 		"body": [
-		  "<View style={{ flex: 1, alignItems: 'center' }}>",
-		  "    <TouchableHighlight underlayColor={'transparent'} onPress={() => { $5 }} style={{ width: '80%', height: '70%', backgroundColor: \"$1\", alignItems: 'center', justifyContent: 'center' }]}>",
-		  "         <Text style= {[{fontSize: $3, color: \"$4\"}]}>$2</Text>",
-		  "    </TouchableHighlight>",
-		  "</View>$0"
+		  " <View style={[ { height: $1, elevation: sc.body, shadowColor: 'black', shadowOpacity: 0.1, shadowOffset: {width: 0, height: 0} , shadowRadius: sc.maxSpace, backgroundColor: 'white', padding: sc.padMid }]} >",
+		  "      $0",
+		  " </View>"
 		],
-		"description": "React Native : Button Standard"
-	  },
-	  "Set Shadow for View()": {
-		"prefix": "rnviewshadowborder",
-		"body": [
-		  " <View style={[{ height: ${1}, borderTopColor: 'lavenderblush', borderTopWidth: sc.minSpace, shadowOpacity: 0.05 }]}>",
-		  "    ${0}",
-		  "</View>"
-		],
-		"description": "Set Shadow for View()"
+		"description": "React Native View Shadow"
 	  },
 	  "React Native : Screen": {
 		"prefix": "rnscreen",
@@ -306,6 +279,13 @@
 		  ""
 		],
 		"description": "React Native : Component : TextInput()"
+	  },
+	  "ช่องว่างระหว่าง Word": {
+		"prefix": "rnwordspacing",
+		"body": [
+		  "&#xFEFF; &#xFEFF;"
+		],
+		"description": "ช่องว่างระหว่าง Word"
 	  },
 
 
