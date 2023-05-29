@@ -30,9 +30,9 @@
 		"prefix": "rntextfield",
 		"body": [
 		  "<TextInput",
-		  "                style={{ height: sc.buttonHeight, borderRadius: sc.maxSpace, borderWidth: sc.minSpace, borderColor: colors.thirdBlue, paddingHorizontal: sc.padMid, backgroundColor: colors.primaryBackground, fontSize: sc.title, marginVertical: sc.caption }}",
+		  "                style={{ height: sc.buttonHeight, borderRadius: sc.maxSpace, borderWidth: sc.midSpace, borderColor: colors.thirdBlue, paddingHorizontal: sc.padMid, fontSize: sc.title, marginTop: sc.title }}",
 		  "                placeholder=\"$1\"",
-		  "                defaultValue=\"$2\"",
+		  "                defaultValue={ $2}",
 		  "                onChangeText={(value) => { $3}}",
 		  "            />$0"
 		],
@@ -43,9 +43,9 @@
 		"body": [
 		  "<TouchableOpacity",
 		  "                    onPress={() => { }}",
-		  "                    style={{ height: sc.buttonHeight, width: \"100%\", backgroundColor: colors.primaryBlue, borderWidth: sc.midSpace, borderColor: colors.backgroundAuth, alignItems: 'center', justifyContent: 'center', borderRadius: sc.midSpace, marginVertical: sc.body }}",
+		  "                    style={{ height: sc.buttonHeight, width: \"100%\", backgroundColor: \"darkslateblue\", borderWidth: sc.midSpace, borderColor: colors.backgroundAuth, alignItems: 'center', justifyContent: 'center', borderRadius: 500, marginTop: sc.title }}",
 		  "                >",
-		  "                    <Text style={[{color: colors.white, fontSize: sc.body}]}>$1</Text>",
+		  "                    <Text style={[{color: colors.white, fontSize: sc.head, fontWeight: '500'}]}>$1</Text>",
 		  "                </TouchableOpacity>$0"
 		],
 		"description": "React Native Button Border"
@@ -74,7 +74,7 @@
 		  "",
 		  "const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = () => {",
 		  "  return (  ",
-		  "     <View style={[$2]} > ",
+		  "     <View style={[{flex: 1 $2}]} > ",
 		  "      ${0}",
 		  "    </View>",
 		  "  );",
@@ -166,7 +166,7 @@
 	  "React: Logo image from Internet": {
 		"prefix": "rnlogonetworkimage",
 		"body": [
-		  "<View style={{ flex: 1, marginHorizontal: $1, backgroundColor: 'lemonchiffon', height: $2 }}>",
+		  "<View style={{ height: sc.spaceOnehundredFiftyHeight }}>",
 		  "<ImageBackground source={{ uri: 'https://reactjs.org/logo-og.png' }} imageStyle={{ opacity: 1 }} resizeMode=\"cover\" style={{ flex: 1, justifyContent: 'center' }} />",
 		  "</View>"
 		],
@@ -287,6 +287,191 @@
 		],
 		"description": "ช่องว่างระหว่าง Word"
 	  },
+	  "React Native Create Method": {
+		"prefix": "rncreatemethod",
+		"body": [
+		  "const $1 = () => {",
+		  "   $0",
+		  "}",
+		  ""
+		],
+		"description": "React Native Create Method"
+	  },
+	  "React Native Config Json": {
+		"prefix": "rnconfigure",
+		"body": [
+		  "module.exports = {",
+		  "  dependencies: {",
+		  "    ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),",
+		  "  },",
+		  "  project: {",
+		  "    ios: {",
+		  "      sourceDir: './ios',",
+		  "    },",
+		  "    android: {}",
+		  "  },",
+		  "  assets: ['./src/assets/fonts/']",
+		  "}",
+		  "  "
+		],
+		"description": "React Native Config Json"
+	  },
+	  "React Native try catch ()": {
+		"prefix": "rntrycatch",
+		"body": [
+		  "try {",
+		  "    $0",
+		  "} catch (error) {",
+		  "    Alert.alert(`${error}`)",
+		  "}"
+		],
+		"description": "React Native try catch ()"
+	  },
+	  "React Native Button word": {
+		"prefix": "rnbuttonword",
+		"body": [
+		  "<Pressable",
+		  "          onPress={() => {$2}}",
+		  "      >",
+		  "           <Text style= {[gbs.body, {marginTop: sc.body, textAlign: 'center', color: 'blue'}]}>$1</Text>",
+		  "                ",
+		  "      </Pressable>",
+		  "      $0"
+		],
+		"description": "React Native Button word"
+	  },
+	  "React page": {
+		"prefix": "rpage",
+		"body": [
+		  "export const metadata = {",
+		  "    title: '$1',",
+		  "    description: '$2',",
+		  "}",
+		  "",
+		  "",
+		  "export default function $3() {",
+		  "    return (",
+		  "        <div className=\"w-screen min-h-screen flex flex-col\">",
+		  "            <div className=\"flex-grow grid place-items-center\">",
+		  "                <div className=\"text-3xl\">$3</div>",
+		  "            </div>",
+		  "        </div>",
+		  "    )",
+		  "}$0"
+		],
+		"description": "React page"
+	  },
+	  "React SettimeOut()": {
+		"prefix": "rwaittime",
+		"body": [
+		  "await new Promise((resolve) => setTimeout(resolve, 3000));"
+		],
+		"description": "React SettimeOut()"
+	  },
+	  "Method Format Date": {
+		"prefix": "rmethodformatdate",
+		"body": [
+		  "export default function getFormatDate(dateString: string): string {",
+		  "    return new Intl.DateTimeFormat('th-TH', { dateStyle: 'long'}).format(new Date(dateString))",
+		  "}"
+		],
+		"description": "Method Format Date"
+	  },
+	  "React Input Text": {
+		"prefix": "rinputtext",
+		"body": [
+		  "<input",
+		  "    className='border rounded-md px-3 py-2 w-full my-2'",
+		  "    type='text'",
+		  "    placeholder='$1'",
+		  "    value={$2}",
+		  "    onChange={(e) => $3}",
+		  "/>$0 "
+		],
+		"description": "React Input Text"
+	  },
+	  "React Button Primary": {
+		"prefix": "rbuttonprimary",
+		"body": [
+		  "<button",
+		  "    className='border rounded-md bg-blue-600 hover:bg-blue-500 text-white font-bold w-full py-2 my-2'",
+		  "    onClick={() => $2}",
+		  ">",
+		  "    $1",
+		  "</button>$0"
+		],
+		"description": "React Button Primary"
+	  },
+	  "Hook: Use State": {
+		"prefix": "rus",
+		"body": [
+		  "const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState(${2: Initial});$0"
+		],
+		"description": "Hook: Use State"
+	  },
+	  "Hook: Use Effect": {
+		"prefix": "rue",
+		"body": [
+		  "useEffect(() => {",
+		  "         ",
+		  "          $1",
+		  "      ",
+		  "        return () => {$2}",
+		  "  }, [$3])$0"
+		],
+		"description": "Hook: Use Effect"
+	  },
+	  "React Component Type": {
+		"prefix": "rctype",
+		"body": [
+		  "import React from 'react'",
+		  "",
+		  "interface ${1:${TM_FILENAME_BASE}}Props {",
+		  "    $2",
+		  "}",
+		  "",
+		  "export default function ${1:${TM_FILENAME_BASE}}({$3}: ${1:${TM_FILENAME_BASE}}Props) {",
+		  "  return (",
+		  "    <div>${1:${TM_FILENAME_BASE}}</div>",
+		  "  )",
+		  "}$0"
+		],
+		"description": "React Component Type"
+	  },
+	  "React Next JS, Metadata": {
+		"prefix": "rmetadata",
+		"body": [
+		  "export const metadata = {",
+		  "    title: '$1',",
+		  "    description: '$2',",
+		  "    keywords: '$3'",
+		  "}"
+		],
+		"description": "React Next JS, Metadata"
+	  },
+	  "React Component Loading": {
+		"prefix": "rcomponentloading",
+		"body": [
+		  "<div className='h-full grid place-items-center mt-20'>",
+		  "            <div",
+		  "                className=\"inline-block h-20 w-20 animate-spin rounded-full border-8 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]\"",
+		  "                role=\"status\">",
+		  "                <span",
+		  "                    className=\"!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]\"",
+		  "                >Loading...</span",
+		  "                >",
+		  "            </div>",
+		  "        </div>"
+		],
+		"description": "React Component Loading"
+	  },
+	  "TypeScript Utitlities Partial": {
+		"prefix": "typescriptpartial",
+		"body": [
+		  "Partial<Omit<${1: Type}, \"${2: props}\" | \"${3: props}\">>"
+		],
+		"description": "TypeScript Utitlities Partial"
+	  }
 
 
 

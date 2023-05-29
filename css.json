@@ -66,5 +66,46 @@
 		  "}"
 		],
 		"description": "Initial css file"
+	  },
+	  "Tailwind Css Text gradient color": {
+		"prefix": "tailwindcsstextgradientcolor",
+		"body": [
+		  ".text_gradient {",
+		  "  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;",
+		  "}"
+		],
+		"description": "Css Text gradient color"
+	  },
+	  "Tailwind Css dropdown": {
+		"prefix": "tailwindcssdropdown",
+		"body": [
+		  ".dropdown {",
+		  "  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[310px] flex flex-col gap-2 justify-end items-end;",
+		  "}",
+		  "",
+		  ".dropdown_link {",
+		  "  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;",
+		  "}"
+		],
+		"description": "Tailwind Css dropdown"
+	  },
+	  "React Tailwind CSS": {
+		"prefix": "tailwindcss",
+		"body": [
+		  "",
+		  ".dropdown {",
+		  "  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[310px] flex flex-col gap-2 justify-end items-end;",
+		  "}",
+		  "",
+		  ".dropdown_link {",
+		  "  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;",
+		  "}",
+		  "",
+		  ".text_gradient {",
+		  "  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;",
+		  "}",
+		  ""
+		],
+		"description": "React Tailwind CSS"
 	  }
 }

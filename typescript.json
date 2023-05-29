@@ -20,4 +20,20 @@
 		],
 		"description": "Type Script : console.log()"
 	  },
+	  "Method Format Date": {
+		"prefix": "methodformatdate",
+		"body": [
+		  "export default function getFormatDate(dateString: string): string {",
+		  "    return new Intl.DateTimeFormat('th-TH', { dateStyle: 'long'}).format(new Date(dateString))",
+		  "}"
+		],
+		"description": "Method Format Date"
+	  },
+	  "TypeScript Utitlities Partial": {
+		"prefix": "typescriptpartial",
+		"body": [
+		  "Partial<Omit<${1: Type}, \"${2: props}\" | \"${3: props}\">>"
+		],
+		"description": "TypeScript Utitlities Partial"
+	  }
 }

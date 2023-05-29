@@ -159,6 +159,25 @@
 		  "&#xFEFF; &#xFEFF;"
 		],
 		"description": "ช่องว่างระหว่าง Word"
+	  },
+	  "React Native Config Json": {
+		"prefix": "rnconfigure",
+		"body": [
+		  "module.exports = {",
+		  "  dependencies: {",
+		  "    ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),",
+		  "  },",
+		  "  project: {",
+		  "    ios: {",
+		  "      sourceDir: './ios',",
+		  "    },",
+		  "    android: {}",
+		  "  },",
+		  "  assets: ['./src/assets/fonts/']",
+		  "}",
+		  "  "
+		],
+		"description": "React Native Config Json"
 	  }
 
 
