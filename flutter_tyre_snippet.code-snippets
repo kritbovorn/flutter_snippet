@@ -284,7 +284,7 @@
 		"prefix": "bsizeboxheight",
 		"body": [
 			"const SizedBox(",
-			"  height: $1,",
+			"  height: $1",
 			"),$0"
 		],
 		"description": "SizedBox(height:_)"
@@ -293,7 +293,7 @@
 		"prefix": "bsizeboxwidth",
 		"body": [
 			"const SizedBox(",
-			"  width: $1,",
+			"  width: $1",
 			"),$0"
 		],
 		"description": "SizedBox(width:_)"
@@ -813,5 +813,157 @@
 		  "}"
 		],
 		"description": "Extension Expanded Equally()"
+	  },
+	  "Flutter ignore: avoid_print": {
+		"prefix": "bignoreprint",
+		"body": [
+		  "// ignore_for_file: avoid_print"
+		],
+		"description": "Flutter ignore: avoid_print"
+	  },
+	  "Flutter Box Shadow of Container() BoxDecoration()": {
+		"prefix": "bboxshadow",
+		"body": [
+		  "boxShadow: [",
+		  "  BoxShadow(",
+		  "      spreadRadius: 1,",
+		  "      blurRadius: 2,",
+		  "      offset: const Offset(0, 1),",
+		  "      color: Colors.grey.withOpacity(0.7))",
+		  "],"
+		],
+		"description": "Flutter Box Shadow of Container()"
+	  },
+	  "Widget Flutter Boxshadow Top()": {
+		"prefix": "bwboxshadowtop",
+		"body": [
+		  "Stack(",
+		  "                children: [",
+		  "                  Positioned(",
+		  "                    top: 0,",
+		  "                    left: 0,",
+		  "                    right: 0,",
+		  "                    child: Container(",
+		  "                      decoration: BoxDecoration(",
+		  "                        boxShadow: [",
+		  "                          BoxShadow(",
+		  "                              spreadRadius: 1,",
+		  "                              blurRadius: 2,",
+		  "                              offset: const Offset(0, -1),",
+		  "                              color: Colors.grey.withOpacity(0.2))",
+		  "                        ],",
+		  "                      ),",
+		  "                    ),",
+		  "                  ),",
+		  "                  Container(",
+		  "                    width: double.infinity,",
+		  "                    height: 50,",
+		  "                    color: Colors.white,",
+		  "                  ),",
+		  "                ],",
+		  "              )"
+		],
+		"description": "Widget Flutter Boxshadow Top()"
+	  },
+	  "Sample Show alert dialog": {
+		"prefix": "balertdialog",
+		"body": [
+		  "showDialog(",
+		  "              context: context,",
+		  "              builder: (context) {",
+		  "                return AlertDialog(",
+		  "                  title: const Text(\"Have null\"),",
+		  "                  actions: [",
+		  "                    ElevatedButton(",
+		  "                        onPressed: () {",
+		  "                          Navigator.of(context).pop();",
+		  "                        },",
+		  "                        child: const Text(\"Cancel\"))",
+		  "                  ],",
+		  "                );",
+		  "              },",
+		  "            );"
+		],
+		"description": "Sample Show alert dialog"
+	  },"Get Current Date Thai": {
+		"prefix": "bmethodgetcurrentthaidate",
+		"body": [
+		  "String getCurrentThaiDate() {",
+		  "    initializeDateFormatting();",
+		  "    // final now = DateTime.now();",
+		  "    String dayOfWeek = DateFormat.EEEE('th').format(now);",
+		  "    String dayMonth = DateFormat.MMMMd('th').format(now);",
+		  "    String year = DateFormat.y('th').format(now);",
+		  "    final time = DateFormat.Hms('th').format(now);",
+		  "    final thaiDate = \"$dayOfWeek $dayMonth ${int.parse(year) + 543} ⏰ $time\";",
+		  "    return thaiDate;",
+		  "  }"
+		],
+		"description": "Get Current Date Thai"
+	  },
+	  "Component Dropdown Form": {
+		"prefix": "bcomponentdropdownform",
+		"body": [
+		  "Theme(",
+		  "      data: ThemeData(",
+		  "          textTheme: ${0: customTextTheme},",
+		  "          splashColor: Colors.transparent,",
+		  "          highlightColor: Colors.transparent,",
+		  "          hoverColor: Colors.transparent,",
+		  "          dropdownMenuTheme: const DropdownMenuThemeData(",
+		  "            inputDecorationTheme: InputDecorationTheme(",
+		  "              border: OutlineInputBorder(",
+		  "                  borderSide: BorderSide(width: 1, color: Color(0xFf5D6679))),",
+		  "              enabledBorder: OutlineInputBorder(",
+		  "                  borderSide: BorderSide(color: Color(0xFf5D6679))),",
+		  "              activeIndicatorBorder: BorderSide(color: Color(0xFf5D6679)),",
+		  "              focusColor: Color(0xFf5D6679),",
+		  "              focusedBorder: OutlineInputBorder(",
+		  "                borderSide: BorderSide(",
+		  "                  width: 1,",
+		  "                  color: Color(0xFf5D6679),",
+		  "                ),",
+		  "              ),",
+		  "            ),",
+		  "          ),",
+		  "          inputDecorationTheme: const InputDecorationTheme(",
+		  "              border: OutlineInputBorder(",
+		  "            borderRadius: BorderRadius.all(",
+		  "              Radius.circular(8),",
+		  "            ),",
+		  "            borderSide: BorderSide(",
+		  "              width: 1,",
+		  "              color: Color(0xFf5D6679),",
+		  "            ),",
+		  "          )),",
+		  "          canvasColor: Theme.of(context).colorScheme.background),",
+		  "      child: DropdownButtonFormField(",
+		  "        value: ${1: newValue},",
+		  "        isExpanded: true,",
+		  "        onSaved: (newValue) => {},",
+		  "        focusColor: Colors.transparent,",
+		  "        items: ${2: arrayData}",
+		  "            .map((e) => DropdownMenuItem(",
+		  "                  value: e,",
+		  "                  child: Text(e),",
+		  "                ))",
+		  "            .toList(),",
+		  "        decoration: const InputDecoration(",
+		  "            border: OutlineInputBorder(",
+		  "          borderSide: BorderSide(width: 1, color: Color(0xFf5D6679)),",
+		  "          borderRadius: BorderRadius.all(Radius.circular(8)),",
+		  "        )",
+		  "            // enabledBorder: UnderlineInputBorder(",
+		  "            //   borderSide:",
+		  "            //       BorderSide(color: Colors.transparent),",
+		  "            // ),",
+		  "            ),",
+		  "        onChanged: (value) {},",
+		  "        validator: (value) =>",
+		  "            value == \"เลือกประเภทห้อง\" ? \"\" : null,",
+		  "      ),",
+		  "    )"
+		],
+		"description": "Component Dropdown Form"
 	  }
 }

@@ -362,7 +362,7 @@
 		"description": "React page"
 	  },
 	  "React SettimeOut()": {
-		"prefix": "rwaittime",
+		"prefix": "rsettimeout",
 		"body": [
 		  "await new Promise((resolve) => setTimeout(resolve, 3000));"
 		],
@@ -444,7 +444,7 @@
 		  "export const metadata = {",
 		  "    title: '$1',",
 		  "    description: '$2',",
-		  "    keywords: '$3'",
+		  "    keywords: ['$3']",
 		  "}"
 		],
 		"description": "React Next JS, Metadata"
@@ -471,7 +471,35 @@
 		  "Partial<Omit<${1: Type}, \"${2: props}\" | \"${3: props}\">>"
 		],
 		"description": "TypeScript Utitlities Partial"
-	  }
+	  },
+	  "Image Next JS": {
+		"prefix": "rimagenextjs",
+		"body": [
+		  "<Image",
+		  "     src={\"$1\"}",
+		  "     width={100}",
+		  "     height={100}",
+		  "     alt='$2'",
+		  "     priority",
+		  "     className='$3'",
+		  "   />"
+		],
+		"description": "Image Next JS"
+	  },
+	  "React Function Component": {
+		"prefix": "rfunctioncomponent",
+		"body": [
+		  "import React from 'react'",
+		  "",
+		  "export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}() {",
+		  "  return (",
+		  "    <div>${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}</div>",
+		  "  );",
+		  "}",
+		  ""
+		],
+		"description": "React Function Component"
+	  },
 
 
 
